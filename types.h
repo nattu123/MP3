@@ -1,3 +1,6 @@
+#ifndef TYPES_H
+#define TYPES_H
+
 typedef enum 
 {
     success,
@@ -10,3 +13,5 @@ typedef enum
     edit,
     unsupported 
 }OperationType; 
+
+#endif 
