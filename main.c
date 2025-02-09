@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include "types.h"
 #include "read.h"
+#include "edit.h"
 
 int main(int argc, char **argv)
 {
     Tag tag;
+    Tag_Edit tag_edit;
     if(argc)
     {
         
@@ -27,7 +29,7 @@ int main(int argc, char **argv)
             printf("------------------------------------\n");
             printf("----- MP3 TAG VIWER AND EDITOR -----");
             printf("------------------------------------\n");
-            if(read_and_validate(argv,&tag)==success);
+            if(read_and_validate_edit_args(argv,&tag_edit)==success);
             {
                 printf("INFO :Done \n");
             }
