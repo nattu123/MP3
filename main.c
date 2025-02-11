@@ -33,9 +33,12 @@ int main(int argc, char **argv)
             {
                 if(edit_tag(&tag_edit)==success)
                 {
-                    
+                    if(rename_and_close_files(&tag_edit,argv))
+                    {
+                        printf("INFO :Done \n");
+
+                    }
                 }
-                printf("INFO :Done \n");
             }
 
         }

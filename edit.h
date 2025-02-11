@@ -19,5 +19,6 @@ Status read_and_validate_edit_args(char **argv,Tag_Edit *tag);
 Status edit_tag(Tag_Edit *tag);
 Status copy_data(Tag_Edit *tag,int flag);
 Status copy_remaining_data(Tag_Edit *tag);
+Status rename_and_close_files(Tag_Edit *tag,char **argv);
 
 #endif

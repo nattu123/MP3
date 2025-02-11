@@ -247,11 +247,15 @@ Status copy_remaining_data(Tag_Edit *tag)
     return success;
 }
 
-Status rename_files(Tag_Edit *tag)
+Status rename_and_close_files(Tag_Edit *tag,char **argv)
 {
     fclose(tag->fptr_temp);
-    if(remove("temp.mp3")==0)
+    fclose(tag->fptr_mp3_edit);
+
+
+    if(remove(argv[4])==0)
     {
+
         printf("File deleted succesfully\n");
     }
     else
@@ -259,5 +263,21 @@ Status rename_files(Tag_Edit *tag)
         printf("Unable to delete file \n");
         return failure;
     }
+
+    if(rename("temp.mp3",argv[4])==0)
+    {
+        printf("File renamed succesfully\n");
+    }
+    else
+    {
+        printf("Unable to rename  file \n");
+        return failure;
+    }
+
+    
+
+
+
+
     return success;
 }
