@@ -27,10 +27,11 @@ int main(int argc, char **argv)
         else if(check_operation(argv)==edit)
         {
             printf("------------------------------------\n");
-            printf("----- MP3 TAG VIWER AND EDITOR -----");
+            printf("----- MP3 TAG VIEWER AND EDITOR -----");
             printf("------------------------------------\n");
             if(read_and_validate_edit_args(argv,&tag_edit)==success);
             {
+                if(edit_tag(&tag_edit)==success);
                 printf("INFO :Done \n");
             }
 

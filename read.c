@@ -87,6 +87,7 @@ Status display_data(Tag *tag)
     printf("%s\n ",str);
 
     // size 
+
     fread(&tag->tag_size,4,1,tag->fptr_mp3);
     printf("%x\n",tag->tag_size);
     char* pos = (char*) (&tag->tag_size);
@@ -96,6 +97,7 @@ Status display_data(Tag *tag)
                     pos [(sizeof (uint)) - i - 1] = pos [i] ^ pos [(sizeof (uint)) - i - 1];
                     pos [i] = pos [i] ^ pos [(sizeof (uint)) - i - 1];
                 }
+
     printf("%s size = %d\n",str,tag->tag_size);
     fseek(tag->fptr_mp3,3,SEEK_CUR);
     tag->tag_dat  = (char *)malloc(tag->tag_size);

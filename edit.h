@@ -9,9 +9,15 @@ typedef struct
 {
     FILE *fptr_mp3_edit;
     char Frame_ID[5] ;
+    uint size_new_data;
+    FILE *fptr_temp;
+    char *new_frame_data;
     
 }Tag_Edit;
 
 Status read_and_validate_edit_args(char **argv,Tag_Edit *tag);
+Status edit_tag(Tag_Edit *tag);
+Status copy_data(Tag_Edit *tag,int flag);
+Status copy_remaining_data(Tag_Edit *tag);
 
 #endif
