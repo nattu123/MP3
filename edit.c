@@ -145,7 +145,7 @@ Status edit_tag(Tag_Edit *tag)
         }
 
     }
-        copy_remaining_data(tag);
+    copy_remaining_data(tag);
 
 }
 
@@ -243,6 +243,21 @@ Status copy_remaining_data(Tag_Edit *tag)
         char ch; 
         ch =fgetc(tag->fptr_mp3_edit);
         fputc(ch,tag->fptr_temp);
+    }
+    return success;
+}
+
+Status rename_files(Tag_Edit *tag)
+{
+    fclose(tag->fptr_temp);
+    if(remove("temp.mp3")==0)
+    {
+        printf("File deleted succesfully\n");
+    }
+    else
+    {
+        printf("Unable to delete file \n");
+        return failure;
     }
     return success;
 }

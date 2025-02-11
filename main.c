@@ -31,7 +31,10 @@ int main(int argc, char **argv)
             printf("------------------------------------\n");
             if(read_and_validate_edit_args(argv,&tag_edit)==success);
             {
-                if(edit_tag(&tag_edit)==success);
+                if(edit_tag(&tag_edit)==success)
+                {
+                    
+                }
                 printf("INFO :Done \n");
             }
 
